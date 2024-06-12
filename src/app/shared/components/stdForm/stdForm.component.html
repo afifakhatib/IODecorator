@@ -1,0 +1,121 @@
+
+
+
+<div class="card p-4">
+    <form
+     #stdForm="ngForm"
+     (ngSubmit)="onAddStd(stdForm)">
+        <div class="form-group">
+            <label for="fname">First Name*
+            </label>
+            <input type="text"
+            name="fname"
+            class="form-control"
+            #fname="ngModel"
+            ngModel
+            required
+            pattern="[a-zA-Z]+">
+
+            <ng-container fname
+            *ngIf="fname.touched">
+
+              <span class="text-danger"
+              *ngIf="fname.hasError('required')">
+                first name is required field.
+              </span>
+
+              <span class="text-danger"
+              *ngIf="fname.hasError('pattern')">
+                first name only contain alphabets.
+              </span>
+            </ng-container>
+
+           </div>
+
+           <div class="form-group">
+            <label for="lname">Last Name*
+            </label>
+            <input type="text"
+            name="lname"
+            class="form-control"
+            #lname="ngModel"
+            ngModel
+            required
+            pattern="[a-zA-z]+">
+
+            <ng-container lname
+            *ngIf="lname.touched">
+
+              <span class="text-danger"
+              *ngIf="lname.hasError('required')">
+                first name is required field.
+              </span>
+
+              <span class="text-danger"
+              *ngIf="lname.hasError('pattern')">
+                first name only contain alphabets.
+              </span>
+            </ng-container>
+           </div>
+
+           <div class="form-group">
+            <label for="email">Email*
+            </label>
+            <input type="text"
+            name="email"
+            class="form-control"
+            #email="ngModel"
+            ngModel
+            required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+
+            <ng-container email
+            *ngIf="email.touched">
+
+              <span class="text-danger"
+              *ngIf="email.hasError('required')">
+                email is required field.
+              </span>
+
+              <span class="text-danger"
+              *ngIf="email.hasError('pattern')">
+                email must contain _,-,@,., and 1 number.
+              </span>
+            </ng-container>
+           </div>
+
+           <div class="form-group">
+            <label for="contact">Contact*
+            </label>
+            <input type="text"
+            name="contact"
+            class="form-control"
+            #contact="ngModel"
+            ngModel
+            required
+            minlength="10"
+            maxlength="10">
+
+            <ng-container contact
+            *ngIf="contact.touched">
+
+              <span class="text-danger"
+              *ngIf="contact.hasError('required')">
+                contact is required field.
+              </span>
+
+              <span class="text-danger"
+              *ngIf="contact.hasError('minlength')">
+              contact must has {{contact.errors?.['minlength'].requiredLength}} and actual length is
+              {{contact.errors?.['minlength'].actualLength}}
+              </span>
+            </ng-container>
+           </div>
+
+           <div class="form-group">
+            <button class="btn btn-info btn-sm btn-block"
+            [disabled]="stdForm.invalid">Add Student</button>
+           </div>
+
+       </form>
+   </div>

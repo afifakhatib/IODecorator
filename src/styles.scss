@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+// body{
+//     background-image: linear-gradient(25deg , purple ,green );
+//     background-size: 300% 300%;
+//     animation: rotation 3s linear infinite alternate;
+//     position: relative;
+// }
+
+// @keyframes rotation {
+//     0%{
+//         background-position-x: left;
+//         background-position-y: center;
+//     }
+//     // 50%{
+//     //     background-position-x: right;
+//     //     background-position-y: center;
+//     // }
+//     100%{
+//         background-position-x: right;
+//         background-position-y: center;
+//     }
+// }
+
+body{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV6-DQF2pBwNFV9KzPafu9RghrNF1tZ8J3AA&s);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    object-fit: cover;
+}

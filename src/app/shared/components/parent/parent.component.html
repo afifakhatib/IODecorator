@@ -1,0 +1,18 @@
+
+<app-child [getMsgFromParent]="msgForChild"
+(emmitMsgEvent)="GettingMsg($event)"></app-child>
+       
+
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+       <p class="alert alert-info">
+           <strong>
+               Msg from Child is : 
+           </strong>
+       
+           {{msgFromChild}}
+       </p>
+        </div>
+      </div>
+  </div>

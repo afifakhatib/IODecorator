@@ -1,0 +1,26 @@
+
+
+
+<table class="table table-dark table-bordered table-responsive-sm"
+*ngIf="getStdArray.length > 0 ; else noStd">
+    <tr>
+        <th>Sr No.</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+    </tr>
+    <tr 
+    *ngFor="let std of getStdArray ; let i = index">
+        <td> [{{i + 1 }}] </td>
+        <td> {{std.fname}} </td>
+        <td> {{std.lname}} </td>
+        <td> {{std.email}} </td>
+        <td> {{std.contact}} </td>
+    </tr>
+</table>
+<ng-template #noStd>
+    <p class="alert alert-warning">
+        No Student Info is Added Yet !!!
+    </p>
+</ng-template>

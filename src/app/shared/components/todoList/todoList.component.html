@@ -1,0 +1,17 @@
+
+
+
+
+
+<ul class="list-group mb-4"
+*ngIf="gettodoArray.length > 0; else notodo">
+    <li class="list-group-item mb-1"
+    *ngFor="let todo of gettodoArray ; let i = index">
+     {{i+1}}]  {{todo.todoItem}}
+    </li>
+</ul>
+<ng-template #notodo>
+  <p class="alert alert-warning">
+    No Todo Item is Added Yet !!!
+  </p>
+</ng-template>
